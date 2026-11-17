@@ -1,0 +1,14 @@
+{
+  "lumpi": {
+    "frames": 50,
+    "byte_equal": true,
+    "seconds": 47.494,
+    "aggregate_sha256": "327723d817f56ca7c62c8ba995edfa453dc61b51656afede401b730a9405f7ca"
+  },
+  "v2x": {
+    "frames": 50,
+    "byte_equal": true,
+    "seconds": 54.87,
+    "aggregate_sha256": "09f2af79b1d7ae51ac2e6c1614b273f18c379e85f75e4ab96c31a54f0cccda0c"
+  }
+}

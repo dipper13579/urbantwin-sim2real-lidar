@@ -1,0 +1,10 @@
+{
+  "configuration_count": 48,
+  "runtime_bound_files": 118,
+  "python_syntax_pass": true,
+  "bash_syntax_pass": true,
+  "full_replays": {
+    "lumpi": 1441.478,
+    "v2x": 126.171
+  }
+}

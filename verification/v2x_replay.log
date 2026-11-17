@@ -1,0 +1,42 @@
+vehicle 10 50
+vehicle 20 50
+vehicle 30 50
+vehicle 40 50
+vehicle 50 50
+truck 10 50
+truck 20 50
+truck 30 50
+truck 40 50
+truck 50 50
+pedestrian 10 50
+pedestrian 20 50
+pedestrian 30 50
+pedestrian 40 50
+pedestrian 50 50
+[scoring] computing realism metrics...
+[scoring] realism: {'CD': 0.5656414077332237, 'MMD': -1.567784778422343e-05, 'EMD': 0.8001955685448086, 'FPD': 0.050022211499708646, 'n_syn_points_pre_subsample': 2500000, 'n_real_points_pre_subsample': 2500000, 'MMD_gamma': 0.0021708999371289226}
+[scoring] computing 3D detection mAP...
+[scoring] mAP_3d_0.5_R40 = 0.0
+[scoring] DONE: scores={'score_combined': 0.383896, 'score_detection': 0.0, 'score_realism': 0.95974, 'mAP_3d_0.5_R40': 0.0, 'mAP_3d_0.5_R11': 0.0, 'mAP_3d_0.7_R40': 0.0, 'mAP_bev_0.5_R40': 0.0, 'CD': 0.565641, 'MMD': -1.568e-05, 'EMD': 0.800196, 'FPD': 0.050022, 'valid_submission': 1, 'AP_3d_0.5_R40_vehicle': None, 'AP_3d_0.5_R40_pedestrian': None, 'AP_3d_0.5_R40_truck': None}
+wrote ${VALIDATION_WORK}/starting_kit/v2x/scores.json
+wrote ${VALIDATION_WORK}/starting_kit/v2x/detailed_results.html
+
+{
+  "score_combined": 0.383896,
+  "score_detection": 0.0,
+  "score_realism": 0.95974,
+  "mAP_3d_0.5_R40": 0.0,
+  "mAP_3d_0.5_R11": 0.0,
+  "mAP_3d_0.7_R40": 0.0,
+  "mAP_bev_0.5_R40": 0.0,
+  "CD": 0.565641,
+  "MMD": -1.568e-05,
+  "EMD": 0.800196,
+  "FPD": 0.050022,
+  "valid_submission": 1,
+  "AP_3d_0.5_R40_vehicle": null,
+  "AP_3d_0.5_R40_pedestrian": null,
+  "AP_3d_0.5_R40_truck": null
+}
+wrote ${FRESH_CLONE}/work/v2x/submission_v2x_G77_H3.zip  (50 frames, 66738 detections)
+format check passed (valid_submission=1)

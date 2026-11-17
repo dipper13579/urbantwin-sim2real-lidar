@@ -1,0 +1,8 @@
+{
+  "cases": 43,
+  "actual_high_cap_frames": 2,
+  "exact_ordered_output_equal": true,
+  "original_seconds": 48.97980759500001,
+  "prefilter_seconds": 4.187407994001433,
+  "change": "Same-class vectorized distance and conservative circumscribed-circle rejection; official IoU and stable kept order unchanged."
+}

@@ -1,0 +1,27 @@
+{
+  "os": "Ubuntu 22.04 under WSL2",
+  "python": "3.10.22",
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU, 8 GB",
+  "torch_cuda": "12.8",
+  "openpcdet_commit": "233f849829b6ac19afb8af8837a0246890908755",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "spconv-cu126": "2.3.8",
+    "cumm-cu126": "0.7.11",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "numba": "0.60.0",
+    "pandas": "2.3.3",
+    "PyYAML": "6.0.3",
+    "easydict": "1.13",
+    "shapely": "2.1.2",
+    "POT": "0.9.7.post1",
+    "plyfile": "1.1.3",
+    "tqdm": "4.70.1",
+    "tensorboardX": "2.6.5",
+    "scikit-image": "0.25.2",
+    "SharedArray": "3.2.4",
+    "torch-scatter": "2.1.2+pt211cu128"
+  },
+  "scope": "Existing execution environment measured locally; installation was not repeated from an empty OS."
+}

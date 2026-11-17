@@ -1,0 +1,9 @@
+{
+ "wide_blob": true,
+ "tw_refit": true,
+ "near": [
+  0.3,
+  0.3
+ ],
+ "k_person": 1.0
+}

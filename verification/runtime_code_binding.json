@@ -1,0 +1,478 @@
+{
+  "scope": "Runtime files from the clean clone executing the recorded full replays; delivered runtime must match these hashes. Documentation and verification records may be finalized afterward.",
+  "all_runtime_files_match_fresh_clone": true,
+  "files": [
+    {
+      "file": "tools/bg_prior.py",
+      "sha256": "86ebc108919a3472c0584eb0bbc1ab01018ac41a4ea6d1add03faa2d7f60ce1a"
+    },
+    {
+      "file": "tools/box_sizes.py",
+      "sha256": "25ed44eb223b9b78b50ea1c0fefb1e8da969f23088e590263e0f01c8f013201b"
+    },
+    {
+      "file": "tools/calibrate_sizes.py",
+      "sha256": "7d4cc620e4ba72b62a95b0a1ce5f671afd3eae5ddf4200702e15eac9f3498b10"
+    },
+    {
+      "file": "tools/class_resolve.py",
+      "sha256": "7fcca6a04ce109dc5fe0055f2ee438d838c72661faadcd589722264c969ee066"
+    },
+    {
+      "file": "tools/ensemble.py",
+      "sha256": "fee26908092e5c00fe5e7fce1b1a957b96ccb7290bd8a9b18c8eabd3f5d0e6e1"
+    },
+    {
+      "file": "tools/fetch_ut.py",
+      "sha256": "42d9b6be89b8c5048a5f0715c5ac4ea2334c0ea8427799a36a856c666c64d9a5"
+    },
+    {
+      "file": "tools/final_rules.py",
+      "sha256": "b08b072506600a229c00ce4b90a1369caddf1fd43ca4aac61ebb243d2cca33f3"
+    },
+    {
+      "file": "tools/guard_v2x.py",
+      "sha256": "62fba2b373e7ed9ec55ed2ac7c93714e19d6506ff4a05d2f9a6d20f4b41ef8d4"
+    },
+    {
+      "file": "tools/infer_members.py",
+      "sha256": "8f0c83898c91d69c0934e2385ae9a46eb7a484715335c1105ef9a83d3d288c27"
+    },
+    {
+      "file": "tools/lumpi_real.py",
+      "sha256": "ef81bccfacc63ba5b867bc80fab7f816c7962256a00e46fb801190e3dbf9bd82"
+    },
+    {
+      "file": "tools/lv_geo.py",
+      "sha256": "efe202b48224af7a5e345d8799618f880b7ec9c8f3b6ae4c578a85a6316499ee"
+    },
+    {
+      "file": "tools/make_submission.py",
+      "sha256": "8969b0ab9b8aea6312dea6b1fb2a9d9a2fc3c25174ecbc577d98298ca320e997"
+    },
+    {
+      "file": "tools/merge_predictions.py",
+      "sha256": "91e758129375b44679806c49ca0db87f1250b33257191a286e12f1959fa8f88c"
+    },
+    {
+      "file": "tools/ped_rules.py",
+      "sha256": "3b095ac4e677f92e4c5ecb277150559dbb8327a8aa0b39fe9c111044d49cadba"
+    },
+    {
+      "file": "tools/postprocess.py",
+      "sha256": "28be67664bcb23f03cbee3af338f5ea7e2b1f0432adf01aa2f457e7f070a387e"
+    },
+    {
+      "file": "tools/predict.py",
+      "sha256": "1a480c17229e0cdd6f3e433ebb3543963163eb40c0fc313d8f1893d2c152bfd4"
+    },
+    {
+      "file": "tools/prepare_lumpi_rare.py",
+      "sha256": "e88f949d8a61a053acb4f5db5c6a510dd6d9cbad3c798c979c0549a3daa2cb52"
+    },
+    {
+      "file": "tools/prepare_lumpi_real.py",
+      "sha256": "0d00eadc7543fc7c49a7da5b3ff980b86e6c3eb737f1c06a8e8516c4b9d0144d"
+    },
+    {
+      "file": "tools/prepare_lumpi_win.py",
+      "sha256": "7705ff746868e6c43432983d4183af955b1898952aade6f3a812e23cef6e2ac0"
+    },
+    {
+      "file": "tools/prepare_training.py",
+      "sha256": "681eed48301fb61294998ac08757ed08e5c5ae7239f06c20b1e0807aa141e811"
+    },
+    {
+      "file": "tools/prepare_ut.py",
+      "sha256": "2fa5e5551527243906b679c80fbff3fb02c0455b42840a9c165b957df2e79b71"
+    },
+    {
+      "file": "tools/prepare_v2x_real.py",
+      "sha256": "f322e3b4da49f187b8637959c4626d9863320c1443ab4725dc0416cb22f4cdda"
+    },
+    {
+      "file": "tools/realism_match.py",
+      "sha256": "36d8c394d7e88eaba6d77e4834ca058f86a9d7a4e24040d564b35e2d1805711f"
+    },
+    {
+      "file": "tools/rebuild_v2x_prior_predictions.py",
+      "sha256": "40d7464c24722c7ca04e34a7ee9d6a6d8732f43e0375cda93303533793608322"
+    },
+    {
+      "file": "tools/refine_extent.py",
+      "sha256": "99304ea7a00f3b0caf9c1ebde2e741b1809fe90cbf6c86a0da9fc2e42349fc63"
+    },
+    {
+      "file": "tools/refine_ground.py",
+      "sha256": "c01272e400ff1a61b3d1a31a9756ee3570e6d66b3acf3949746fef4fcd9811f7"
+    },
+    {
+      "file": "tools/refine_points.py",
+      "sha256": "91b7bc601cc1a29b54f535518a6ec040695802274d37e80af8e2a9abd096b781"
+    },
+    {
+      "file": "tools/release_paths.py",
+      "sha256": "fba72290a0050d65014a5a9ba38389cc8f3644d7abb4da06ba9970e71b154b82"
+    },
+    {
+      "file": "tools/reproduce_v2x.py",
+      "sha256": "7efd24de420180518559024dc8ac8ae8f9e8f3e6cc971c40d0e3348844d596da"
+    },
+    {
+      "file": "tools/runtime_config.py",
+      "sha256": "be33994ecb7a3d41c7b51f9811b4a5a3c09d471a190e4e81a1928ed24daf75cf"
+    },
+    {
+      "file": "tools/sanitize.py",
+      "sha256": "22d47f834d716dcfbbc92190ab53046df5de57a009b14acd16dc787cd9cb9901"
+    },
+    {
+      "file": "tools/select_lumpi_frames.py",
+      "sha256": "9e03c350d29f046df5c2850d3d263d66b10baaa78ba0a3acd97d77503b3fc358"
+    },
+    {
+      "file": "tools/select_rare_frames.py",
+      "sha256": "2ec20e58e8faa0579a3480b6d8d1193e40f6c350d6a6351c6fad78bbc8777810"
+    },
+    {
+      "file": "tools/static_prior.py",
+      "sha256": "b08e817d1c71a2e5fcc92734dc84c08690b3496a952ba9087f2319e41eca1dff"
+    },
+    {
+      "file": "tools/synth_rider.py",
+      "sha256": "cf85af60acaf666f0b586a052cb7652cb310d6432195fa64305b55e7ce65cf37"
+    },
+    {
+      "file": "tools/train_member.py",
+      "sha256": "7c773cdc7e604d31ca572e195762e759e5163ae17d161d20a3da1527961c9e76"
+    },
+    {
+      "file": "tools/tw_object.py",
+      "sha256": "d3f8e04c7de4140db8daa5c0740fa28eeca5b804086f3d2ccb8a3b06fd773ed7"
+    },
+    {
+      "file": "tools/tw_refit.py",
+      "sha256": "0e0672e37b23162056476275fefd4895604233fc62c1fa9ec069e7bafaf422ac"
+    },
+    {
+      "file": "tools/v2x_fusion.py",
+      "sha256": "78bbc7ee19d616ddcaa6075e89f5879e367bac95ddc2ffd941376bf58b15d50f"
+    },
+    {
+      "file": "tools/v2x_quality.py",
+      "sha256": "182f6b7804f6a625f563567e61a63b4e143aee9e83820fc3575906e44fc42268"
+    },
+    {
+      "file": "tools/van_geo.py",
+      "sha256": "d69efdb5375abdecd5493fce2e258d0b914fffeea1dfe416cf0c0a6f0cba672b"
+    },
+    {
+      "file": "tools/verify_predictions.py",
+      "sha256": "fc3a52a886c12beb9b42285346b9988bb186dce4cc0773309414d12dce0477d6"
+    },
+    {
+      "file": "tools/vert_fit.py",
+      "sha256": "a646ce15d0f2c441897d7415ceb50b7e9d350fb95ecf3aeff468e1e5cb8e101f"
+    },
+    {
+      "file": "tools/wide_blob.py",
+      "sha256": "b14dd3142cd8bc6b6654ffad7a7bdcfd875d97ac08e9723efb79e55371f81c5a"
+    },
+    {
+      "file": "tools/win_stack.py",
+      "sha256": "1edd3ce84934cf84219fa3acbdb1bee5cfe8b97836975b6d808b0b44a535fdc9"
+    },
+    {
+      "file": "scripts/env.sh",
+      "sha256": "327c04a5097eb7d5dd613d0e2b9d73bf548a78d88b97f8a052768865a6108771"
+    },
+    {
+      "file": "scripts/install_overlay.sh",
+      "sha256": "673f2e1ae38fea227b356deb49912b1f648bd2557ba61b73147aee7205ab9650"
+    },
+    {
+      "file": "scripts/lumpi_chain.sh",
+      "sha256": "2d959a7123f850ab8475324e80a131d281e6faaf00abb1edfe96bbe9b2985c34"
+    },
+    {
+      "file": "scripts/lumpi_final_sources.sh",
+      "sha256": "7cb8b517755199cf5aec21b66a231f525a620a6f94297bff70e84e5eb53663a8"
+    },
+    {
+      "file": "scripts/lumpi_functions.sh",
+      "sha256": "bc853e54afdb5febeb6129636a495f7d140548eaa227c93791d0251b4d99d621"
+    },
+    {
+      "file": "scripts/prepare_real_lumpi.sh",
+      "sha256": "60288fa81f99f3c459919c48e5e78600a83938c6163ee2b3eb40035496005d13"
+    },
+    {
+      "file": "scripts/prepare_realism.sh",
+      "sha256": "ca0bcf5d929cbeca2d6a232add12445d317732ee3eae276a38e3c9fcfde5a43f"
+    },
+    {
+      "file": "scripts/rebuild_lumpi_priors.sh",
+      "sha256": "62e8eb83864ad888de89145912b287bb9e769cce378a60506241b6216c90b096"
+    },
+    {
+      "file": "scripts/reproduce_lumpi.sh",
+      "sha256": "5679885423c652a64e88787809b731c3ebb9a46c09eeb7245f7c38ff74076045"
+    },
+    {
+      "file": "scripts/reproduce_v2x.sh",
+      "sha256": "a6a708329e4c14afc5901373f4326e51a1ff03293b6932f8e3d243c50e7d2617"
+    },
+    {
+      "file": "configs/NEW_V_training.yaml",
+      "sha256": "54f11fe60666d80cddab17b3a549dfa2508c49a3ba5aef8bcb62c1d30f462a91"
+    },
+    {
+      "file": "configs/PR1_R14_training.yaml",
+      "sha256": "8d85a8f981eb2eb35950fde4f854713a0b1643424a3949d7a3f74ca884f0e12d"
+    },
+    {
+      "file": "configs/R24_truck_training.yaml",
+      "sha256": "28cc0a8716a73d15e6d4372f9739adc7ca48d70dbc06b2a6b0e2096334003e12"
+    },
+    {
+      "file": "configs/R28_truck_training.yaml",
+      "sha256": "28cc0a8716a73d15e6d4372f9739adc7ca48d70dbc06b2a6b0e2096334003e12"
+    },
+    {
+      "file": "configs/lumpi_centerpoint.yaml",
+      "sha256": "309df56a9b8813220561344e8079d6e608bd37fa592f219d1ac66f5707171307"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v11.yaml",
+      "sha256": "dc4a91f8495bd2c6fdf669dc9a590e9a9f5e78498e3c7e27e3a968b662aeff31"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v16.yaml",
+      "sha256": "b3350245672c58c06160a970af447de272327aafd5274b2da11a22552a0edc2b"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v19.yaml",
+      "sha256": "563bbc9c4318154a098ce96dad20579a8fd2b2f853fff3f4e4c2f226e71a936f"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v22.yaml",
+      "sha256": "65a80452ec2e7e5df4fd38e6f229c42d528e1bdcf2cbae3c5fa53db5d32e1fd9"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v23.yaml",
+      "sha256": "5fa375a60810cc2197e221cdf34e8526886a5302b83eb33d3fa04f3d22dd1976"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v24.yaml",
+      "sha256": "2467978c1b71ac2e05ddc366629c967c266c19e01424cd64aef43c740959148b"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v25.yaml",
+      "sha256": "9b16ca8f80b5604e5b9b4d86a8f5c3212a9b350d1fe613a1dc4479db382315d9"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v26.yaml",
+      "sha256": "cf718840e49ad400f201a1edaaf8333a2c7d7b7889b211e07cd11589b4baaba1"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v27.yaml",
+      "sha256": "455bc78b993cf70efd2ec5a8867a429eac12ac99312790db184083059931f161"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v3.yaml",
+      "sha256": "73f5da0673547be67b4b9c343c18d11e6cd6ee516af99cc34b49a787c0b6e6f6"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v30.yaml",
+      "sha256": "f922976311643ffa905ae4d114ad9ca35dbe2ba59dd129fb9c984361e7787906"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v34.yaml",
+      "sha256": "7ca61da729cc0be9c866591c53f20b5e3c7a7098693f2502497949ca0adfbb23"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v35.yaml",
+      "sha256": "bd5afba78cb2a17ed9c98b7c790978135982df16de0fb6a8e8e9e60e9e8ed8bc"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v36.yaml",
+      "sha256": "87d745468bb0061619e98f75dddd19fe7ef7793e3dcee75575f294eab95f0256"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v4.yaml",
+      "sha256": "31115f03fc51a9a44520e3f17801a74ec9929cbf1c22df047f2fd2aae38846c2"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v7.yaml",
+      "sha256": "775ff398dc34bf777f2082e5c0c5c9c82b3e1da6e011f4e6d708c5a5e89ce5b9"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v8.yaml",
+      "sha256": "6b5cd8960e4779169a035b6dfb2d562d1681b8cb550a9d5085ece65462db0018"
+    },
+    {
+      "file": "configs/lumpi_centerpoint_v9.yaml",
+      "sha256": "8995d35fbd953c6682bb82ad7558a20965049688b04ff88159a1dbb4f46e9da9"
+    },
+    {
+      "file": "configs/lumpi_dataset.yaml",
+      "sha256": "a7a5ae8d3f0a60ba983b43f875d384af1c8d0a9b13fa642a8fa97acfcf880862"
+    },
+    {
+      "file": "configs/lumpi_person_members.txt",
+      "sha256": "f48f2718e208e1a88d2f3aa238bb75d04b0af1e414b7c5b3dd9a9dbf93c56eb0"
+    },
+    {
+      "file": "configs/lumpi_recipe.json",
+      "sha256": "e7790b7429ce998e1ba72fd59a00ff96561051a621aed3b3d2ab0a72f2f9bb6d"
+    },
+    {
+      "file": "configs/members.json",
+      "sha256": "24cf6376117af317a308b4593c07c35d0ae53c7fcc6ae76911f32e3589f38ad7"
+    },
+    {
+      "file": "configs/v2x_centerpoint.yaml",
+      "sha256": "9e084aee6a48300a75c13ca70c826603b4da4e3054849f0895fb275d96ad23c1"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v10.yaml",
+      "sha256": "f7346b80c37b7c17e2183943603a66b952927f0f25d6a476ad3cb8604dcb6fa2"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v12.yaml",
+      "sha256": "b4a5e113625961d6d2bf757982b77a4d4c1edfdc389ff47feb99db16794dbd39"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v15.yaml",
+      "sha256": "d9f618dbaf8eb7584bc5a6c50035458e821f26b946258c4ae0f80abb079998fb"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v16.yaml",
+      "sha256": "dd11d0ace7f394243dba8d630b3f35ef3fca74081f11af1704601c3ac44d99ff"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v2.yaml",
+      "sha256": "9ab99a9ea01423f107ea9eb3ee749c388e8d6386a122342be38721d1243da0a3"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v21.yaml",
+      "sha256": "d1282f0b12f3a3a5d28e82e8de66c123be3184d58d2b30c9b7276d8137a91213"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v22.yaml",
+      "sha256": "94f20802bf0585ea148eb00e8bd20092ca7d4b0138358d86e9cce55a8d814850"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v24.yaml",
+      "sha256": "45f8157d4ec9d2927a172efac1c28ccb0709f7261efd8209aa4a76cbf9d5973a"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v25.yaml",
+      "sha256": "aa901acabd684a3dca1922ed3b4f63fb8356faaa058da9178ebe4a697309f539"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v26.yaml",
+      "sha256": "909d09d9dea3424d99556cbe7ce35614b87f22d6e3f265d0bc03da5e0b96e070"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v27.yaml",
+      "sha256": "c9574b37e49145257b305c32ea4d313ce77a258d289b8968e87041da14906fd8"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v28.yaml",
+      "sha256": "b9c1a1de290d1b3e99b42e726b03dc0a98edd536c31264b84ff9d324c9c6d1ad"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v29.yaml",
+      "sha256": "12a16250aeec6ac02559d580ed2f0b85cc3995047adc6e90092b20f75c05288f"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v3.yaml",
+      "sha256": "93df29f38098e1bda9bf2dda7499f590cacecf28ddd6e40ff6821f1af027e2ab"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v30.yaml",
+      "sha256": "70d90d028410da332336c793a909679e5a0a791d4279c9dd3c920f5822eb4e6a"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v33.yaml",
+      "sha256": "1dcc7db7618ce7c010e05693194adeb1f2280d24ac62f6c204e6d8856f245490"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v36.yaml",
+      "sha256": "edb932ac603d3b3f698d0637805b010c508e076cc2a3fdf52aa9e60a829b7f9e"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v4.yaml",
+      "sha256": "e1efa7de636cf97d17413a8b60ad5168df3d6a9f0c5f4ed41df6b76051c34dea"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v5.yaml",
+      "sha256": "46faca9afaefe18f022b63df5566295a483cd4a08c176390f0224962e0ab197e"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v6.yaml",
+      "sha256": "8b92760d2c6c6096a9d66eb8647f6e37fbc959fb660ecc1ad9aca6b384eb7d11"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v7.yaml",
+      "sha256": "df7d5fc0e43078c6fea2e8b7fc9f13de05787d1be4643a1b28a355a030804e80"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v8.yaml",
+      "sha256": "43db2b6eab621d920f683fba173ab4006a2b3f6f659dcc2f97b6af5ee74a8569"
+    },
+    {
+      "file": "configs/v2x_centerpoint_v9.yaml",
+      "sha256": "bf6bba1dc7311208aca736b16c161b094e44051ec96cedfe8b7189407af5c1ec"
+    },
+    {
+      "file": "configs/v2x_dataset.yaml",
+      "sha256": "2c405dbc1275843a8501c29f6c429a67ab9865848f8cde392a2fe33ad34cadbf"
+    },
+    {
+      "file": "configs/v2x_dense_statistics.json",
+      "sha256": "6464bb36d4eb33fd4b1e29234c104a4e890fa5eb0d36f98713321283a1459541"
+    },
+    {
+      "file": "configs/v2x_pedestrian.json",
+      "sha256": "278b6ee345266a22c74215e65c8a1e8dea615b37f4e19474ba41582363da4154"
+    },
+    {
+      "file": "configs/v2x_voxelrcnn.yaml",
+      "sha256": "d461401ec5e49ff4343ed0244ea6bcbdd9293ffe145821183c6926206a236a2e"
+    },
+    {
+      "file": "openpcdet_overlay/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/__init__.py",
+      "sha256": "6e44781258ee508b3a3106d8bc4e9c43321f8fb7db37c9e3b6731981fd363af1"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/augmentor/data_augmentor.py",
+      "sha256": "9e1d0f2ac6e5d1b037c7f6ce86625da25a648635d722dc9cbefb97ed8dca4bbb"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/urbantwin/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/urbantwin/synth_clutter.py",
+      "sha256": "85ab1f1ba7371120132441c0bbdcac94e9b449a759a15b303f4393ed1480efa5"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/urbantwin/synth_person.py",
+      "sha256": "dc8bd891bad20bf8d524d71b339587dbbcad2d94f0cb1b8e9d163417c82b9635"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/datasets/urbantwin/urbantwin_dataset.py",
+      "sha256": "964602f57cb14c6da86ffcddeed7873a5c1092d1377e9eb767a55027173493c2"
+    },
+    {
+      "file": "openpcdet_overlay/pcdet/models/detectors/detector3d_template.py",
+      "sha256": "0d0ab59aae4d72c076bc8e8f626c057f00f6af98826f4f67a6a752faf31d25e7"
+    }
+  ]
+}

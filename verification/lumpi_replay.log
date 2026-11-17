@@ -1,0 +1,55 @@
+16:09:47 A car fit
+16:10:13 B U chain
+16:11:03 D class steps
+16:11:45 I Bus rule
+16:11:45 J Person chain
+16:20:54 K Car chain
+16:22:05 L Truck chain
+16:25:21 done ${FRESH_CLONE}/work/lumpi/base/predictions.json
+16:25:21 J' Person chain, 18 files
+16:29:43 assemble
+16:29:53 done ${FRESH_CLONE}/work/lumpi/person/predictions.json
+16:29:53 K' Car chain (F_v34 F_v36) + Car boxes of (F_v35)
+16:30:50 assemble
+16:30:59 done ${FRESH_CLONE}/work/lumpi/car/predictions.json
+16:30:59 K' Car chain (F_v34 F_v36) + Car boxes of (F_v35)
+16:31:56 B' U chain, base members F_v36 F_v34
+16:32:41 assemble
+16:32:50 done ${FRESH_CLONE}/work/lumpi/bicycle/predictions.json
+${FRESH_CLONE}/work/lumpi/car/stack.json: 50 frames, boxes 112888 -> 113123, recipe {"wide_blob": true, "tw_refit": true, "near": [0.3, 0.3], "k_person": 1.0}
+${FRESH_CLONE}/work/lumpi/car/final.json: 50 frames, 117345 boxes; Van boxes added 4222
+${FRESH_CLONE}/work/lumpi/bicycle/stack.json: 50 frames, boxes 120893 -> 121129, recipe {"wide_blob": true, "tw_refit": true, "near": [0.3, 0.3], "k_person": 1.0}
+${FRESH_CLONE}/work/lumpi/bicycle/final.json: 50 frames, 125351 boxes; Van boxes added 4222
+wrote ${FRESH_CLONE}/work/lumpi/predictions.json: 50 frames, 123344 boxes (routed: ['Bicycle'])
+[scoring] computing realism metrics...
+[scoring] realism: {'CD': 0.6746683359932096, 'MMD': 9.213557012355267e-05, 'EMD': 1.0210140215222026, 'FPD': 0.29189370162293926, 'n_syn_points_pre_subsample': 2500000, 'n_real_points_pre_subsample': 2500000, 'MMD_gamma': 0.0005127265283459014}
+[scoring] computing 3D detection mAP...
+[scoring] mAP_3d_0.5_R40 = 0.0
+[scoring] DONE: scores={'score_combined': 0.378978, 'score_detection': 0.0, 'score_realism': 0.947444, 'mAP_3d_0.5_R40': 0.0, 'mAP_3d_0.5_R11': 0.0, 'mAP_3d_0.7_R40': 0.0, 'mAP_bev_0.5_R40': 0.0, 'CD': 0.674668, 'MMD': 9.214e-05, 'EMD': 1.021014, 'FPD': 0.291894, 'valid_submission': 1, 'AP_3d_0.5_R40_Person': None, 'AP_3d_0.5_R40_Car': None, 'AP_3d_0.5_R40_Bicycle': None, 'AP_3d_0.5_R40_Motorcycle': None, 'AP_3d_0.5_R40_Bus': None, 'AP_3d_0.5_R40_Truck': None, 'AP_3d_0.5_R40_Van': None, 'AP_3d_0.5_R40_Unknown': None}
+wrote ${VALIDATION_WORK}/starting_kit/lumpi/scores.json
+wrote ${VALIDATION_WORK}/starting_kit/lumpi/detailed_results.html
+
+{
+  "score_combined": 0.378978,
+  "score_detection": 0.0,
+  "score_realism": 0.947444,
+  "mAP_3d_0.5_R40": 0.0,
+  "mAP_3d_0.5_R11": 0.0,
+  "mAP_3d_0.7_R40": 0.0,
+  "mAP_bev_0.5_R40": 0.0,
+  "CD": 0.674668,
+  "MMD": 9.214e-05,
+  "EMD": 1.021014,
+  "FPD": 0.291894,
+  "valid_submission": 1,
+  "AP_3d_0.5_R40_Person": null,
+  "AP_3d_0.5_R40_Car": null,
+  "AP_3d_0.5_R40_Bicycle": null,
+  "AP_3d_0.5_R40_Motorcycle": null,
+  "AP_3d_0.5_R40_Bus": null,
+  "AP_3d_0.5_R40_Truck": null,
+  "AP_3d_0.5_R40_Van": null,
+  "AP_3d_0.5_R40_Unknown": null
+}
+wrote ${FRESH_CLONE}/work/lumpi/submission_lumpi_WINc3.zip  (50 frames, 123344 detections)
+format check passed (valid_submission=1)

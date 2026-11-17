@@ -1,0 +1,56 @@
+{
+  "multipliers": [
+    1.0,
+    0.1,
+    0.5,
+    0.5
+  ],
+  "spec": {
+    "base_rule": {
+      "blend_rule": {
+        "first": {
+          "power": 1.6967,
+          "ground_power": 1.5,
+          "floor": 0.0,
+          "inside_target": 0.8,
+          "bands_target": 4.0,
+          "confidence_full": 8.649,
+          "inside_power": 1.25,
+          "sparse_points": 8.0,
+          "sparse_strength": 1.0,
+          "sparse_range_start": 30.0,
+          "sparse_range_end": 50.0,
+          "ground_tolerance": 0.1484,
+          "bands_power": 0.3799
+        },
+        "second": {
+          "power": 1.6967,
+          "ground_power": 1.5,
+          "floor": 0.1,
+          "inside_target": 0.8,
+          "bands_target": 4.0,
+          "confidence_full": 8.649,
+          "inside_power": 1.25,
+          "sparse_points": 8.0,
+          "sparse_strength": 1.0,
+          "sparse_range_start": 30.0,
+          "sparse_range_end": 50.0,
+          "source_kind": "modelmax",
+          "source_blend": 0.5,
+          "score_power": 1.0,
+          "ground_tolerance": 0.1484,
+          "bands_power": 0.3799
+        },
+        "weight": 0.2194
+      }
+    },
+    "density": {
+      "count10": 90.0,
+      "decay": 15.0,
+      "tolerance": 1.0,
+      "scale": 0.25,
+      "strength": 0.25,
+      "side": "both"
+    }
+  }
+}

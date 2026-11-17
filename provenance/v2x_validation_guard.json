@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "e06e6525f31da009566ae553dce4cf34cc2c636f7a1162ed41809ee804fd9b7b",
+  "forbidden_list_sha256": "e791c4a58de7a7b4bc4361c70601e01f4037dcc439e0608bd7488aafb77496e6",
+  "audit_method": "Canonical original scenario/-1/frame paths, not local s0..s5 IDs; official sorted-33 infrastructure scenario mapping, 100 forbidden IDs; all archive entries checked before labels.",
+  "official_mapping_rows": 100,
+  "selected_validation_frames": 359,
+  "forbidden_intersection": 0,
+  "whole_archive_forbidden_intersection": 0,
+  "audit_origin_sha256": "dba769093ebf398b0c35600da0d43375cf11cd900bd102ec4efa0792dc5c8649"
+}

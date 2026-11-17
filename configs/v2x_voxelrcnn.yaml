@@ -1,0 +1,204 @@
+# VR1 = V7 (CenterPoint, point dropout [0.4,1.0], clutter, crowd pedestrians) + Voxel R-CNN ROI refinement head,
+# fine-tuned 8 epochs from outputs/v2x/V7/model.pth (first stage pretrained, ROI head from scratch).
+# v7 = V6 fine-tuned 8 epochs with random point dropout (RANDOM_KEEP_RATIO [0.4, 1.0]) for far / sparse vehicles.
+# v6 = V5 fine-tuned 8 epochs with procedural street clutter (unlabelled negatives) + the V5 crowd pedestrians.
+# v5 = V4 fine-tuned 8 epochs with crowded synthetic pedestrians (groups, closer spacing, mutual occlusion).
+# V2X v4: v3 with a stride-4 BEV head (0.4 m cells) for sharper pedestrian localization; v3 notes: like v2 but UT Van stays truck (official V2X-Real super-class map; v2's Van->vehicle cost truck AP),
+# 24 epochs. All 9000 UT-V2X train frames, procedural walking pedestrians
+# calibrated to real V2X-Real infra(-1) pedestrians (non-forbidden val): ~38 pts @10 m, 0.66x0.69x1.72 m boxes,
+# placed on locally lowest ground (the site is sloped). Single infrastructure LiDAR at the origin.
+CLASS_NAMES: ['vehicle', 'truck', 'pedestrian']
+
+DATA_CONFIG:
+    _BASE_CONFIG_: configs/v2x_dataset.yaml
+    RANDOM_KEEP_RATIO: [0.4, 1.0]
+    DATA_PATH: 'data/v2x_v3'
+    SYNTH_PERSON:
+        ENABLED: True
+        CLASS_NAME: 'pedestrian'
+        LOCAL_GROUND: True
+        PROB: 0.9
+        NUM: [5, 20]
+        HEIGHT: [1.5, 1.85]
+        BOX_LW: [[0.56, 0.86], [0.55, 0.86]]
+        BOX_H: [1.56, 1.94]
+        SENSORS: [[0.0, 0.0, 0.0]]
+        COUNT_AT_10M: 37.6
+        COUNT_DECAY_M: 17.7
+        COUNT_SIGMA: 0.54
+        MAX_RANGE: 45.0
+        GROUND_TOL: 0.2
+        GROUP_PROB: 0.5
+        GROUP_SIZE: [2, 5]
+        GROUP_RADIUS: 1.2
+        MIN_SEP: 0.55
+        OBSTACLE_CLEAR: 0.5
+        OCCLUSION: True
+    SYNTH_CLUTTER:
+        ENABLED: True
+        PROB: 0.9
+        NUM: [6, 25]
+        MAX_RANGE: 45.0
+        SENSORS: [[0.0, 0.0, 0.0]]
+        COUNT_AT_10M: 37.6
+        COUNT_DECAY_M: 17.7
+        COUNT_SIGMA: 0.54
+        GROUND_TOL: 0.2
+        LOCAL_GROUND: True
+        OBSTACLE_CLEAR: 0.5
+        MIN_SEP: 1.0
+        BOX_CLEAR: 0.6
+
+MODEL:
+    NAME: VoxelRCNN
+
+    VFE:
+        NAME: MeanVFE
+
+    BACKBONE_3D:
+        NAME: VoxelResBackBone8x
+
+    MAP_TO_BEV:
+        NAME: HeightCompression
+        NUM_BEV_FEATURES: 256
+
+    BACKBONE_2D:
+        NAME: BaseBEVBackbone
+        LAYER_NUMS: [5, 5]
+        LAYER_STRIDES: [1, 2]
+        NUM_FILTERS: [128, 256]
+        UPSAMPLE_STRIDES: [2, 4]
+        NUM_UPSAMPLE_FILTERS: [256, 256]
+
+    DENSE_HEAD:
+        NAME: CenterHead
+        CLASS_AGNOSTIC: False
+        CLASS_NAMES_EACH_HEAD: [
+            ['vehicle'],
+            ['truck'],
+            ['pedestrian'],
+        ]
+        SHARED_CONV_CHANNEL: 64
+        USE_BIAS_BEFORE_NORM: True
+        NUM_HM_CONV: 2
+        SEPARATE_HEAD_CFG:
+            HEAD_ORDER: ['center', 'center_z', 'dim', 'rot']
+            HEAD_DICT: {
+                'center': {'out_channels': 2, 'num_conv': 2},
+                'center_z': {'out_channels': 1, 'num_conv': 2},
+                'dim': {'out_channels': 3, 'num_conv': 2},
+                'rot': {'out_channels': 2, 'num_conv': 2},
+            }
+        TARGET_ASSIGNER_CONFIG:
+            FEATURE_MAP_STRIDE: 4
+            NUM_MAX_OBJS: 500
+            GAUSSIAN_OVERLAP: 0.1
+            MIN_RADIUS: 2
+        LOSS_CONFIG:
+            LOSS_WEIGHTS: {
+                'cls_weight': 1.0,
+                'loc_weight': 0.25,
+                'code_weights': [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+            }
+        POST_PROCESSING:
+            SCORE_THRESH: 0.05
+            POST_CENTER_LIMIT_RANGE: [-42, -42, -10, 42, 42, 4]
+            MAX_OBJ_PER_SAMPLE: 500
+            NMS_CONFIG:
+                NMS_TYPE: nms_gpu
+                NMS_THRESH: 0.2
+                NMS_PRE_MAXSIZE: 1000
+                NMS_POST_MAXSIZE: 100
+
+    ROI_HEAD:
+        NAME: VoxelRCNNHead
+        CLASS_AGNOSTIC: True
+        SHARED_FC: [256, 256]
+        CLS_FC: [256, 256]
+        REG_FC: [256, 256]
+        DP_RATIO: 0.3
+        NMS_CONFIG:
+            TRAIN:
+                NMS_TYPE: nms_gpu
+                MULTI_CLASSES_NMS: False
+                NMS_PRE_MAXSIZE: 9000
+                NMS_POST_MAXSIZE: 512
+                NMS_THRESH: 0.8
+            TEST:
+                NMS_TYPE: nms_gpu
+                MULTI_CLASSES_NMS: False
+                NMS_PRE_MAXSIZE: 2048
+                NMS_POST_MAXSIZE: 300
+                NMS_THRESH: 0.7
+        ROI_GRID_POOL:
+            FEATURES_SOURCE: ['x_conv2', 'x_conv3', 'x_conv4']
+            PRE_MLP: True
+            GRID_SIZE: 6
+            POOL_LAYERS:
+                x_conv2:
+                    MLPS: [[64, 64]]
+                    QUERY_RANGES: [[3, 3, 2]]
+                    POOL_RADIUS: [0.4]
+                    NSAMPLE: [16]
+                    POOL_METHOD: max_pool
+                x_conv3:
+                    MLPS: [[64, 64]]
+                    QUERY_RANGES: [[3, 3, 2]]
+                    POOL_RADIUS: [0.8]
+                    NSAMPLE: [16]
+                    POOL_METHOD: max_pool
+                x_conv4:
+                    MLPS: [[64, 64]]
+                    QUERY_RANGES: [[3, 3, 2]]
+                    POOL_RADIUS: [1.6]
+                    NSAMPLE: [16]
+                    POOL_METHOD: max_pool
+        TARGET_CONFIG:
+            BOX_CODER: ResidualCoder
+            ROI_PER_IMAGE: 64
+            FG_RATIO: 0.5
+            SAMPLE_ROI_BY_EACH_CLASS: True
+            CLS_SCORE_TYPE: roi_iou
+            CLS_FG_THRESH: 0.75
+            CLS_BG_THRESH: 0.25
+            CLS_BG_THRESH_LO: 0.1
+            HARD_BG_RATIO: 0.8
+            REG_FG_THRESH: 0.55
+        LOSS_CONFIG:
+            CLS_LOSS: BinaryCrossEntropy
+            REG_LOSS: smooth-l1
+            CORNER_LOSS_REGULARIZATION: True
+            LOSS_WEIGHTS: {'rcnn_cls_weight': 1.0, 'rcnn_reg_weight': 1.0, 'rcnn_corner_weight': 1.0, 'code_weights': [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]}
+
+    POST_PROCESSING:
+        RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+        SCORE_THRESH: 0.03
+        OUTPUT_RAW_SCORE: False
+        EVAL_METRIC: urbantwin
+        NMS_CONFIG:
+            MULTI_CLASSES_NMS: False
+            NMS_TYPE: nms_gpu
+            NMS_THRESH: 0.5
+            NMS_PRE_MAXSIZE: 4096
+            NMS_POST_MAXSIZE: 500
+
+OPTIMIZATION:
+    BATCH_SIZE_PER_GPU: 4
+    NUM_EPOCHS: 8
+
+    OPTIMIZER: adam_onecycle
+    LR: 0.001
+    WEIGHT_DECAY: 0.01
+    MOMENTUM: 0.9
+
+    MOMS: [0.95, 0.85]
+    PCT_START: 0.4
+    DIV_FACTOR: 10
+    DECAY_STEP_LIST: [35, 45]
+    LR_DECAY: 0.1
+    LR_CLIP: 0.0000001
+
+    LR_WARMUP: False
+    WARMUP_EPOCH: 1
+
+    GRAD_NORM_CLIP: 10

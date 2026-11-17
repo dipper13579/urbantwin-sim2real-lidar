@@ -1,0 +1,118 @@
+{
+  "scope": "One deterministic first sorted frame from each of four allowed sets, all three static-prior chains; no raw frame IDs or data stored in evidence.",
+  "cases": [
+    {
+      "part": "M4",
+      "chain": "OGP4791116SBCZR8WU",
+      "exact_records_equal": false,
+      "actual_boxes": 1000,
+      "historical_boxes": 1000,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M4",
+      "chain": "OGProt5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 5064,
+      "historical_boxes": 5064,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M4",
+      "chain": "OGPtbtbr5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 3056,
+      "historical_boxes": 3056,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M4r",
+      "chain": "OGP4791116SBCZR8WU",
+      "exact_records_equal": true,
+      "actual_boxes": 1000,
+      "historical_boxes": 1000,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M4r",
+      "chain": "OGProt5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 5837,
+      "historical_boxes": 5837,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M4r",
+      "chain": "OGPtbtbr5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 3579,
+      "historical_boxes": 3579,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6",
+      "chain": "OGP4791116SBCZR8WU",
+      "exact_records_equal": false,
+      "actual_boxes": 1000,
+      "historical_boxes": 1000,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6",
+      "chain": "OGProt5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 4713,
+      "historical_boxes": 4713,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6",
+      "chain": "OGPtbtbr5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 2719,
+      "historical_boxes": 2719,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6r",
+      "chain": "OGP4791116SBCZR8WU",
+      "exact_records_equal": true,
+      "actual_boxes": 1000,
+      "historical_boxes": 1000,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6r",
+      "chain": "OGProt5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 5047,
+      "historical_boxes": 5047,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    },
+    {
+      "part": "M6r",
+      "chain": "OGPtbtbr5SBCZR8Wh2",
+      "exact_records_equal": false,
+      "actual_boxes": 2993,
+      "historical_boxes": 2993,
+      "box_multiset_equal": true,
+      "all_class_static_cells_exact": true
+    }
+  ],
+  "seconds": 106.071,
+  "all_exact": false,
+  "all_box_multisets_exact": true,
+  "all_effective_static_cells_exact": true,
+  "interpretation": "Historical unordered class iteration can reorder equal-score boxes across classes. Ordered map JSON differs; map contents and >=0.3 static cell support are compared separately. These maps are consumed as occupancy counts, not ranked detection outputs."
+}

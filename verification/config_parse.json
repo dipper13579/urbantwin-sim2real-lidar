@@ -1,0 +1,341 @@
+{
+  "training_executed": false,
+  "recipes": [
+    {
+      "member": "lumpi/A_cp20",
+      "config": "configs/lumpi_centerpoint.yaml",
+      "dataset": "data/lumpi",
+      "epoch": 20,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v3",
+      "config": "configs/lumpi_centerpoint_v3.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 20,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v8",
+      "config": "configs/lumpi_centerpoint_v8.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v4",
+      "config": "configs/lumpi_centerpoint_v4.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 30,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v7",
+      "config": "configs/lumpi_centerpoint_v7.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v9",
+      "config": "configs/lumpi_centerpoint_v9.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v11",
+      "config": "configs/lumpi_centerpoint_v11.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v16",
+      "config": "configs/lumpi_centerpoint_v16.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 3,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v19",
+      "config": "configs/lumpi_centerpoint_v19.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v22",
+      "config": "configs/lumpi_centerpoint_v22.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v23",
+      "config": "configs/lumpi_centerpoint_v23.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v24",
+      "config": "configs/lumpi_centerpoint_v24.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v25",
+      "config": "configs/lumpi_centerpoint_v25.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v26",
+      "config": "configs/lumpi_centerpoint_v26.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v27",
+      "config": "configs/lumpi_centerpoint_v27.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v30",
+      "config": "configs/lumpi_centerpoint_v30.yaml",
+      "dataset": "data/lumpi_v2",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v34",
+      "config": "configs/lumpi_centerpoint_v34.yaml",
+      "dataset": "data/lumpi_v3b",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v35",
+      "config": "configs/lumpi_centerpoint_v35.yaml",
+      "dataset": "data/lumpi_v3b",
+      "epoch": 6,
+      "parsed": true
+    },
+    {
+      "member": "lumpi/F_v36",
+      "config": "configs/lumpi_centerpoint_v36.yaml",
+      "dataset": "data/lumpi_v3b",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V25",
+      "config": "configs/v2x_centerpoint_v25.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V12",
+      "config": "configs/v2x_centerpoint_v12.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V10",
+      "config": "configs/v2x_centerpoint_v10.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V9",
+      "config": "configs/v2x_centerpoint_v9.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V8",
+      "config": "configs/v2x_centerpoint_v8.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V7",
+      "config": "configs/v2x_centerpoint_v7.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V6",
+      "config": "configs/v2x_centerpoint_v6.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V5",
+      "config": "configs/v2x_centerpoint_v5.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V4",
+      "config": "configs/v2x_centerpoint_v4.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 20,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V21",
+      "config": "configs/v2x_centerpoint_v21.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V26",
+      "config": "configs/v2x_centerpoint_v26.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V22",
+      "config": "configs/v2x_centerpoint_v22.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V27",
+      "config": "configs/v2x_centerpoint_v27.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V16",
+      "config": "configs/v2x_centerpoint_v16.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V28",
+      "config": "configs/v2x_centerpoint_v28.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V30",
+      "config": "configs/v2x_centerpoint_v30.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V24",
+      "config": "configs/v2x_centerpoint_v24.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V33",
+      "config": "configs/v2x_centerpoint_v33.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V29",
+      "config": "configs/v2x_centerpoint_v29.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V15",
+      "config": "configs/v2x_centerpoint_v15.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/VR1",
+      "config": "configs/v2x_voxelrcnn.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 1,
+      "parsed": true
+    },
+    {
+      "member": "v2x/B_cp16_dens",
+      "config": "configs/v2x_centerpoint.yaml",
+      "dataset": "data/v2x",
+      "epoch": 16,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V2",
+      "config": "configs/v2x_centerpoint_v2.yaml",
+      "dataset": "data/v2x_v2",
+      "epoch": 20,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V36",
+      "config": "configs/v2x_centerpoint_v36.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 8,
+      "parsed": true
+    },
+    {
+      "member": "v2x/NEW_V",
+      "config": "configs/NEW_V_training.yaml",
+      "dataset": "outputs/v2x/final/t9/r24/synthetic_dataset",
+      "epoch": 4,
+      "parsed": true
+    },
+    {
+      "member": "v2x/R24_truck",
+      "config": "configs/R24_truck_training.yaml",
+      "dataset": "outputs/v2x/final/t9/r24/synthetic_dataset",
+      "epoch": 4,
+      "parsed": true
+    },
+    {
+      "member": "v2x/R28_truck",
+      "config": "configs/R28_truck_training.yaml",
+      "dataset": "outputs/v2x/final/t9/r24/synthetic_dataset",
+      "epoch": 4,
+      "parsed": true
+    },
+    {
+      "member": "v2x/PR1_R14",
+      "config": "configs/PR1_R14_training.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 4,
+      "parsed": true
+    },
+    {
+      "member": "v2x/V3",
+      "config": "configs/v2x_centerpoint_v3.yaml",
+      "dataset": "data/v2x_v3",
+      "epoch": 24,
+      "parsed": true
+    }
+  ]
+}

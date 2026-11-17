@@ -1,0 +1,10 @@
+{
+  "asset_count": 52,
+  "max_asset_bytes": 240273065,
+  "total_asset_bytes": 5358859026,
+  "all_individual_assets_below_2GB": true,
+  "historical_prediction_assets_match_zip": {
+    "lumpi": true,
+    "v2x": true
+  }
+}

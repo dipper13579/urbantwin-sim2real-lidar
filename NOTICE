@@ -1,0 +1,10 @@
+UrbanTwin release preparation
+Copyright 2026 KuanLin Chen
+Original project code: Apache License 2.0.
+OpenPCDet modified files retain the upstream Apache-2.0 license and copyright notices.
+Upstream: https://github.com/open-mmlab/OpenPCDet
+Pinned commit: 233f849829b6ac19afb8af8837a0246890908755
+Overlay modifications: UrbanTwin dataset, procedural synthetic objects, dropout, height shifts,
+box occlusion and detector export compatibility. Files under openpcdet_overlay are modified
+or added relative to this commit. The upstream repository and its history are not included.
+Datasets, official starter-kit code, checkpoints and submissions are not relicensed by this file.

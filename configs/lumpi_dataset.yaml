@@ -1,0 +1,68 @@
+DATASET: 'UrbanTwinDataset'
+DATA_PATH: 'data/lumpi'
+OFFICIAL_EVAL_DIR: 'starting_kit/lumpi/scoring_program'
+
+POINT_CLOUD_RANGE: [-40, -40, -5, 40, 40, 5]
+EVAL_CLASSES: ['Person', 'Car', 'Bicycle', 'Motorcycle', 'Bus', 'Truck', 'Van', 'Unknown']
+
+DATA_SPLIT: {
+    'train': train,
+    'test': val
+}
+# training-time density augmentation: keep a random fraction of points in [lo, hi]
+RANDOM_KEEP_RATIO: [1.0, 1.0]
+
+MAX_FRAMES: {
+    'train': 0,
+    'test': 250
+}
+
+# test frames are xyz only (no intensity)
+POINT_FEATURE_ENCODING: {
+    encoding_type: absolute_coordinates_encoding,
+    used_feature_list: ['x', 'y', 'z'],
+    src_feature_list: ['x', 'y', 'z'],
+}
+
+DATA_AUGMENTOR:
+    DISABLE_AUG_LIST: ['placeholder']
+    AUG_CONFIG_LIST:
+        - NAME: gt_sampling
+          USE_ROAD_PLANE: False
+          DB_INFO_PATH:
+              - dbinfos_train.pkl
+          PREPARE: {
+             filter_by_min_points: ['Car:10', 'Van:10', 'Truck:10', 'Bus:10', 'Motorcycle:5', 'Bicycle:5', 'Unknown:10'],
+          }
+          SAMPLE_GROUPS: ['Car:2', 'Van:2', 'Truck:3', 'Bus:4', 'Motorcycle:4', 'Bicycle:4', 'Unknown:2']
+          NUM_POINT_FEATURES: 3
+          DATABASE_WITH_FAKELIDAR: False
+          REMOVE_EXTRA_WIDTH: [0.0, 0.0, 0.0]
+          LIMIT_WHOLE_SCENE: True
+
+        - NAME: random_world_flip
+          ALONG_AXIS_LIST: ['x', 'y']
+
+        - NAME: random_world_rotation
+          WORLD_ROT_ANGLE: [-0.78539816, 0.78539816]
+
+        - NAME: random_world_scaling
+          WORLD_SCALE_RANGE: [0.95, 1.05]
+
+DATA_PROCESSOR:
+    - NAME: mask_points_and_boxes_outside_range
+      REMOVE_OUTSIDE_BOXES: True
+
+    - NAME: shuffle_points
+      SHUFFLE_ENABLED: {
+        'train': True,
+        'test': False
+      }
+
+    - NAME: transform_points_to_voxels
+      VOXEL_SIZE: [0.1, 0.1, 0.25]
+      MAX_POINTS_PER_VOXEL: 10
+      MAX_NUMBER_OF_VOXELS: {
+        'train': 80000,
+        'test': 80000
+      }

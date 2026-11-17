@@ -1,0 +1,27 @@
+{
+  "M4": {
+    "frames": 152,
+    "exact_ids_equal": true,
+    "forbidden_exclusion_assertions_passed": true
+  },
+  "M6": {
+    "frames": 102,
+    "exact_ids_equal": true,
+    "forbidden_exclusion_assertions_passed": true
+  },
+  "M4r": {
+    "frames": 76,
+    "exact_ids_equal": true,
+    "forbidden_exclusion_assertions_passed": true
+  },
+  "M6r": {
+    "frames": 110,
+    "exact_ids_equal": true,
+    "forbidden_exclusion_assertions_passed": true
+  },
+  "M4w": {
+    "frames": 100,
+    "exact_ids_equal": true,
+    "forbidden_exclusion_assertions_passed": true
+  }
+}

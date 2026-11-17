@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+RELEASE_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+export RELEASE_ROOT
+export WORK_ROOT=${WORK_ROOT:-$RELEASE_ROOT/work}
+export RAW_ROOT=${RAW_ROOT:-$WORK_ROOT/raw}
+export KIT_ROOT=${KIT_ROOT:-$WORK_ROOT/starting_kit}
+export PCDET_ROOT=${PCDET_ROOT:-$RELEASE_ROOT/OpenPCDet}
+export PYTHONPATH="$RELEASE_ROOT/tools:$PCDET_ROOT:${PYTHONPATH:-}"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+export PYTHONDONTWRITEBYTECODE=1
+export NUMBA_CACHE_DIR=${NUMBA_CACHE_DIR:-$WORK_ROOT/numba_cache}
+cd "$RELEASE_ROOT"

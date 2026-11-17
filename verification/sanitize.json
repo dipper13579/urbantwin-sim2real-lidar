@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "files_scanned": 151,
+  "reachable_blobs_scanned": 148,
+  "reachable_commits_scanned": 1,
+  "hits_by_category": {
+    "user_absolute_path": 0,
+    "email": 0,
+    "ipv4": 0,
+    "private_key": 0,
+    "provider_token": 0,
+    "assigned_secret": 0,
+    "bearer": 0,
+    "oversize": 0,
+    "forbidden_file": 0,
+    "symlink": 0
+  },
+  "total_hits": 0,
+  "findings": [],
+  "remotes": [],
+  "scope": "Every worktree file, reachable Git blob/commit/tag, Git config/hooks/reflogs. Object packs decoded with git cat-file. No path/content allowlist.",
+  "limitations": "Rule-based scanning is not a proof that arbitrary unknown credentials cannot exist. No raw match values printed."
+}

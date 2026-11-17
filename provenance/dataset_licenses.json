@@ -1,0 +1,36 @@
+[
+  {
+    "dataset": "UT-LUMPI",
+    "downloaded_metadata_sha256": "a5ef8b6a4f8297e78cbf1aedce214ec43f1b157cabb8af40a89501891e1b3bfb",
+    "version": "1.1",
+    "license": {
+      "name": "CC0 1.0",
+      "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+      "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+      "rightsIdentifier": "CC0-1.0",
+      "rightsIdentifierScheme": "SPDX",
+      "schemeUri": "https://spdx.org/licenses/",
+      "languageCode": "en"
+    },
+    "termsOfUse": null,
+    "restrictions": null,
+    "source": "Downloaded Dataverse metadata snapshot; current live metadata was blocked by the service during release verification."
+  },
+  {
+    "dataset": "UT-V2X-Real-IC",
+    "downloaded_metadata_sha256": "eeb6a87742e34f5ce77cb49bb12cd950d194bea7cf17ff78fe9c946b7eaa6391",
+    "version": "2.1",
+    "license": {
+      "name": "CC0 1.0",
+      "uri": "http://creativecommons.org/publicdomain/zero/1.0",
+      "iconUri": "https://licensebuttons.net/p/zero/1.0/88x31.png",
+      "rightsIdentifier": "CC0-1.0",
+      "rightsIdentifierScheme": "SPDX",
+      "schemeUri": "https://spdx.org/licenses/",
+      "languageCode": "en"
+    },
+    "termsOfUse": null,
+    "restrictions": null,
+    "source": "Downloaded Dataverse metadata snapshot; current live metadata was blocked by the service during release verification."
+  }
+]

@@ -1,0 +1,14 @@
+/work/
+/OpenPCDet/
+/data/
+/outputs/
+/starting_kit/
+__pycache__/
+*.pyc
+*.pth
+*.pkl
+*.bin
+*.zip
+*.tar*
+.env
+.env.*

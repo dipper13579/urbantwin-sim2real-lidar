@@ -1,0 +1,16 @@
+{
+  "lumpi": {
+    "official_valid_submission": 1,
+    "packaged_predictions_byte_equal": true,
+    "local_format_archive_sha256": "1a0df4e5e2fea0d01de8c98687023f5009e7d0c5f60ed7f4705c4b1236c03588",
+    "declaration": "Anonymous unsigned local validation fixture; not the historical signed declaration",
+    "checker_scope": "Official structural/format validity using dummy reference data; no leaderboard score recomputation"
+  },
+  "v2x": {
+    "official_valid_submission": 1,
+    "packaged_predictions_byte_equal": true,
+    "local_format_archive_sha256": "d9a21626eed8d9d0aa1cd7bbe5b2a9d826f46a206ee7302bc729d2e599049958",
+    "declaration": "Anonymous unsigned local validation fixture; not the historical signed declaration",
+    "checker_scope": "Official structural/format validity using dummy reference data; no leaderboard score recomputation"
+  }
+}
