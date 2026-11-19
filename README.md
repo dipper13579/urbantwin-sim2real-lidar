@@ -3,14 +3,16 @@
 **Team:** dipper13579  
 **Author:** KuanLin Chen — Department of Industrial and Systems Engineering, Chung Yuan Christian University (中原大學工業與系統工程學系).
 
-**Paper:** “Fixing the Twin, Not the Detector: Sim-to-Real Roadside LiDAR Detection from Digital-Twin Data,” IEEE BigData 2026 Cup. Paper link: **TBD**.
+**Challenge:** [UCF UrbanTwin Sim2Real LiDAR Challenge](https://urbanity-lab.github.io/bdc2026-urbantwin-sim2real/)
+
+**Paper:** “Fixing the Twin, Not the Detector: Sim-to-Real Roadside LiDAR Detection from Digital-Twin Data”, accepted to the IEEE BigData 2026 Cup proceedings.
 
 This repository reconstructs the two selected submissions from synthetic-trained OpenPCDet members. It contains code, recipes and verification evidence; datasets, real-derived maps, prediction caches and weights are external.
 
 | Track | Submission | Combined | Detection mAP | Result source |
 |---|---:|---:|---:|---|
 | LUMPI | 1052645 / WINc3 | 0.5541 | 0.2047 | First place; Codabench submission 1052645 |
-| V2X-Real | 1054488 / G77 H3 | 0.8102 | 0.5013 | Codabench submission 1054488 |
+| V2X-Real | 1054488 / G77 H3 | 0.8102 | 0.5013 | Fifth place; Codabench submission 1054488 |
 
 These are historical leaderboard results, not scores recomputed by the local dummy-reference checker. `VALIDATION.md` records exact cached replay and format checks. `MEMBERS.md` maps every checkpoint to its recipe and parent; `RELEASE_ASSETS.md` supplies SHA-256 values for separately distributed artifacts.
 
@@ -47,11 +49,46 @@ If extension wheels are unavailable for the selected torch/CUDA combination, bui
 
 ## Obtain inputs separately
 
-- Official challenge and starter-kit links: https://urbanity-lab.github.io/urbantwin-sim2real-challenge/ . Extract each official kit to KIT_ROOT/lumpi and KIT_ROOT/v2x, including scoring_program, local_eval.py, forbidden_frames.txt, detection_test_frames and detection_test_frame_ids.json.
+- Follow the track links on the [official challenge page](https://urbanity-lab.github.io/bdc2026-urbantwin-sim2real/) to obtain the starter kits. Extract each official kit to KIT_ROOT/lumpi and KIT_ROOT/v2x, including scoring_program, local_eval.py, forbidden_frames.txt, detection_test_frames and detection_test_frame_ids.json.
 - UrbanTwin synthetic downloads: UT-LUMPI https://doi.org/10.7910/DVN/D9SSWD and UT-V2X https://doi.org/10.7910/DVN/N6N4UR . Download/extract the pcd and lbl trees to RAW_ROOT/UT-LUMPI/extracted/UCF-DT-LUMPI-Seq-1 and RAW_ROOT/UT-V2X-Real-IC/extracted/UCF-DT-V2X-Real-Seq-1. The locally stored Dataverse metadata declares **CC0 1.0** for both; see the versioned snapshot fields in `provenance/dataset_licenses.json`. The live metadata endpoint was blocked during preparation, so review the current landing-page terms when downloading. This repository's Apache license does not replace dataset terms.
 - LUMPI: https://data.uni-hannover.de/dataset/lumpi . Obtain Measurement 4/6 Label.csv from its official links and place them at WORK_ROOT/data/lumpi_real/M4_Label.csv and M6_Label.csv. `scripts/prepare_real_lumpi.sh` fetches selected allowed point frames into RAW_ROOT/LUMPI-real and constructs local calibration sets.
 - V2X-Real: https://github.com/ucla-mobility/V2X-Real . Obtain val.zip through its documented download and place it at RAW_ROOT/V2X-Real/val.zip. `tools/guard_v2x.py` binds this archive and the forbidden list to the prior canonical-identity audit; changed inputs require a new audit before use.
-- Checkpoints: arrange the individually verified assets at WORK_ROOT / each `checkpoint` path in `configs/members.json`. Use the filenames and SHA-256 values in `RELEASE_ASSETS.md` to verify separately distributed checkpoints.
+- Download the 48 checkpoints and both scored prediction files from the [final submissions release](https://github.com/dipper13579/urbantwin-sim2real-lidar/releases/tag/v1.0-final-submissions). [RELEASE_ASSETS.md](RELEASE_ASSETS.md) lists their sizes and SHA-256 hashes.
+
+From the repository root, download the files into a new directory under `WORK_ROOT`. The commands below verify all 50 files, then move each checkpoint to the path specified by `configs/members.json`. The two reference predictions stay in `ASSET_ROOT` for comparison with replay output.
+
+```bash
+export ASSET_ROOT="${WORK_ROOT:?Set WORK_ROOT first}/final-submissions"
+mkdir -p "$ASSET_ROOT"
+gh release download v1.0-final-submissions --repo dipper13579/urbantwin-sim2real-lidar \
+  --pattern '*__model.pth' --pattern '*_predictions.json' --dir "$ASSET_ROOT"
+python - <<'PY'
+import hashlib
+import json
+import os
+from pathlib import Path
+
+assets = Path(os.environ["ASSET_ROOT"])
+work = Path(os.environ["WORK_ROOT"])
+members = json.loads(Path("configs/members.json").read_text())
+inventory = json.loads(Path("provenance/release_assets.json").read_text())
+for item in inventory:
+    if item["kind"] not in ("checkpoint", "predictions"):
+        continue
+    src = assets / item["filename"]
+    if src.stat().st_size != item["bytes"] or hashlib.sha256(src.read_bytes()).hexdigest() != item["sha256"]:
+        raise SystemExit(f"Verification failed for {src}")
+for item in inventory:
+    if item["kind"] == "checkpoint":
+        dst = work / members[item["member"]]["checkpoint"]
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        if dst.exists():
+            if hashlib.sha256(dst.read_bytes()).hexdigest() != item["sha256"]:
+                raise SystemExit(f"Different checkpoint already exists at {dst}")
+        else:
+            (assets / item["filename"]).rename(dst)
+PY
+```
 
 Optional UrbanTwin range downloader (or download through the website if access is restricted):
 
@@ -124,14 +161,12 @@ python tools/make_submission.py --track lumpi --predictions work/lumpi/predictio
 python tools/make_submission.py --track v2x --predictions work/v2x/predictions.json --synthetic-dir "$WORK_ROOT/outputs/v2x/synthetic50_exact1m" --declaration "$WORK_ROOT/declaration.txt" --out work/submission_v2x_G77_H3.zip
 ```
 
-Verify each reconstructed prediction against its historical archive:
+Verify each reconstructed prediction against the scored JSON downloaded from the release:
 
 ```bash
-python tools/verify_predictions.py --actual work/lumpi/predictions.json --expected "$WORK_ROOT/submissions/submission_lumpi_WINc3_win1m.zip"
-python tools/verify_predictions.py --actual work/v2x/predictions.json --expected "$WORK_ROOT/submissions/submission_v2x_G77_H3.zip"
+python tools/verify_predictions.py --actual work/lumpi/predictions.json --expected "$ASSET_ROOT/lumpi_1052645_predictions.json"
+python tools/verify_predictions.py --actual work/v2x/predictions.json --expected "$ASSET_ROOT/v2x_1054488_predictions.json"
 ```
-
-Place those historical archives at the indicated private paths, or pass their actual location.
 
 Alternatively set DECLARATION before either replay script to pack and check immediately. The packer invokes the official checker and requires valid_submission=1. Dummy-reference detection scores are not leaderboard estimates. Archive bytes can change with declaration text and zip timestamps; exact detection equality and the historical archive hashes are reported separately.
 

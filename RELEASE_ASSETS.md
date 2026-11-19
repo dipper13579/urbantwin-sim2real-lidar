@@ -1,8 +1,8 @@
-# External release asset inventory
+# Final submission release assets
 
-52 original artifacts: 48 checkpoints, two final predictions and two historical submission archives. Every file is below 2 GB; none belongs in Git. Machine-readable inventory: `provenance/release_assets.json`. Source fields describe the neutral WORK_ROOT checkpoint layout or ASSET_ROOT download filenames; original development locations are retained only in the private author handoff.
+The [final submissions release](https://github.com/dipper13579/urbantwin-sim2real-lidar/releases/tag/v1.0-final-submissions) distributes 48 checkpoints and the two scored prediction files for LUMPI 1052645 and V2X-Real 1054488. The [README](README.md#obtain-inputs-separately) shows how to download and verify them and install the checkpoints under `WORK_ROOT`. The machine-readable inventory is in `provenance/release_assets.json`.
 
-**Historical archives are hash references, not automatically cleared for redistribution:** they contain synthetic points and the original declaration, which may identify the signer. Before an owner-authorized upload, review dataset redistribution terms and replace the declaration if privacy requires it. A changed archive needs a new filename/hash; preserve the historical hash as a reference. Repack only after explicit publication authorization.
+**Historical submission ZIPs** — not distributed (contain the signed declaration); hash for reference only.
 
 | Filename | Member / submission | Bytes | SHA-256 |
 |---|---|---:|---|
