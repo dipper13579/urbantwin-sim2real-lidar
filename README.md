@@ -5,7 +5,7 @@
 
 **Challenge:** [UCF UrbanTwin Sim2Real LiDAR Challenge](https://urbanity-lab.github.io/bdc2026-urbantwin-sim2real/)
 
-**Paper:** “Fixing the Twin, Not the Detector: Sim-to-Real Roadside LiDAR Detection from Digital-Twin Data”, accepted to the IEEE BigData 2026 Cup proceedings.
+**Paper:** “Fixing the Twin, Not the Detector: Sim-to-Real Roadside LiDAR Detection from Digital-Twin Data”, accepted to the IEEE BigData 2026 Cup proceedings. arXiv: https://arxiv.org/abs/2611.26035
 
 This repository reconstructs the two selected submissions from synthetic-trained OpenPCDet members. It contains code, recipes and verification evidence; datasets, real-derived maps, prediction caches and weights are external.
 
